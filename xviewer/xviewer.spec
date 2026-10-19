@@ -51,6 +51,9 @@ and various image metadata features.
 
 %install
 %meson_install
+echo "===== INSTALLED FILES ====="
+find %{buildroot} -type f | sort
+echo "===== END INSTALLED FILES ====="
 
 %find_lang xviewer
 
