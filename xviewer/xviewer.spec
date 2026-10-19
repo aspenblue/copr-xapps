@@ -1,4 +1,4 @@
-%global forgeurl https://github.com/xapp-project/xepub
+%global forgeurl https://github.com/linuxmint/xviewer
 
 Name:           xviewer
 Version:        3.4.17
