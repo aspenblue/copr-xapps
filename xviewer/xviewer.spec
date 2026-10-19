@@ -22,7 +22,7 @@ BuildRequires:  gtk3-devel
 BuildRequires:  gdk-pixbuf2-devel
 BuildRequires:  libpeas-devel
 BuildRequires:  cinnamon-desktop-devel
-BuildRequires:  xapp-devel
+BuildRequires:  xapps-devel
 BuildRequires:  libxml2-devel
 BuildRequires:  zlib-devel
 BuildRequires:  libX11-devel
