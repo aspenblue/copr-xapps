@@ -34,7 +34,7 @@ It is part of the XApp project and is designed to work across
 different desktop environments and Linux distributions.
 
 %prep
-%autosetup -n xepub-master
+%autosetup -n xepub-%{version}
 
 %build
 %meson
