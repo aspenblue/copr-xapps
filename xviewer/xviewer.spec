@@ -57,17 +57,8 @@ Development files for applications using the Xviewer library.
 
 %install
 %meson_install
-echo "===== INSTALLED FILES ====="
-find %{buildroot} -type f | sort
-echo "===== END INSTALLED FILES ====="
-echo "=== Installed translation files ==="
-find %{buildroot}/usr/share/locale -type f 2>/dev/null || true
-echo "=== END Installed translation files ==="
 
 %find_lang xviewer
-echo "===== xviewer.lang ====="
-cat xviewer.lang
-echo "===== END xviewer.lang ====="
 
 %check
 %meson_test
