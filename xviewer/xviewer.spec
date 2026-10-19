@@ -22,7 +22,6 @@ BuildRequires:  glib2-devel
 BuildRequires:  gtk3-devel
 BuildRequires:  libpeas1-devel
 BuildRequires:  gdk-pixbuf2-devel
-BuildRequires:  libpeas-devel
 BuildRequires:  cinnamon-desktop-devel
 BuildRequires:  xapps-devel
 BuildRequires:  libxml2-devel
@@ -41,6 +40,13 @@ Xviewer is a fast and functional image viewer developed by the
 Linux Mint project. It supports image viewing, zooming, printing,
 and various image metadata features.
 
+%package devel
+Summary:        Development files for Xviewer
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+
+%description devel
+Development files for applications using the Xviewer library.
+
 %prep
 %autosetup -n xviewer-%{version}
 
@@ -54,8 +60,14 @@ and various image metadata features.
 echo "===== INSTALLED FILES ====="
 find %{buildroot} -type f | sort
 echo "===== END INSTALLED FILES ====="
+echo "=== Installed translation files ==="
+find %{buildroot}/usr/share/locale -type f 2>/dev/null || true
+echo "=== END Installed translation files ==="
 
 %find_lang xviewer
+echo "===== xviewer.lang ====="
+cat xviewer.lang
+echo "===== END xviewer.lang ====="
 
 %check
 %meson_test
@@ -65,8 +77,6 @@ echo "===== END INSTALLED FILES ====="
 %doc README.md AUTHORS THANKS MAINTAINERS
 %{_bindir}/xviewer
 %{_libdir}/xviewer/
-%{_libdir}/pkgconfig/xviewer.pc
-%{_includedir}/xviewer/
 %{_datadir}/applications/xviewer.desktop
 %{_datadir}/metainfo/xviewer.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.x.viewer.gschema.xml
@@ -74,6 +84,10 @@ echo "===== END INSTALLED FILES ====="
 %{_datadir}/icons/hicolor/
 %{_datadir}/xviewer/
 %{_datadir}/help/
+
+%files devel
+%{_libdir}/pkgconfig/xviewer.pc
+%{_includedir}/xviewer/
 
 %changelog
 * Mon Oct 19 2026 jarsxk <jarsxk@gmail.com> - 3.4.17-1
