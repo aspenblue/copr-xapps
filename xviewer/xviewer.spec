@@ -16,9 +16,11 @@ BuildRequires:  gettext
 BuildRequires:  itstool
 BuildRequires:  yelp-tools
 BuildRequires:  desktop-file-utils
+BuildRequires:  cmake
 
 BuildRequires:  glib2-devel
 BuildRequires:  gtk3-devel
+BuildRequires:  libpeas1-devel
 BuildRequires:  gdk-pixbuf2-devel
 BuildRequires:  libpeas-devel
 BuildRequires:  cinnamon-desktop-devel
