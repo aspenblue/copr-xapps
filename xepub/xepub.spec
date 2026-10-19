@@ -48,6 +48,9 @@ different desktop environments and Linux distributions.
 echo "===== INSTALLED FILES ====="
 find %{buildroot} -type f | sort
 echo "===== END INSTALLED FILES ====="
+echo "===== INSTALLED locale ====="
+find %{buildroot}%{_datadir}/locale -type f 2>/dev/null | sort
+echo "===== END INSTALLED locale ====="
 
 %files
 %license LICENSES/*
@@ -57,7 +60,7 @@ echo "===== END INSTALLED FILES ====="
 %{_datadir}/glib-2.0/schemas/org.x.xepub.gschema.xml
 %{_datadir}/icons/hicolor/scalable/apps/xepub.svg
 %{_datadir}/applications/xepub.desktop
-%{_datadir}/locale/*/LC_MESSAGES/xepub.mo
+#%{_datadir}/locale/*/LC_MESSAGES/xepub.mo
 
 %changelog
 * Mon Oct 19 2026 jarsxk <jarsxk@gmail.com> - 1.0.2-1
