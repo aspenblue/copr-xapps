@@ -2,7 +2,7 @@
 
 Name:           xepub
 Version:        1.0.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        EPUB reader for Linux desktops
 
 License:        GPL-3.0-or-later
@@ -19,7 +19,6 @@ BuildRequires:  meson >= 0.59.0
 BuildRequires:  ninja-build
 BuildRequires:  pkgconf-pkg-config
 
-
 Requires:       gtk3
 Requires:       webkit2gtk4.1
 Requires:       python3
@@ -27,6 +26,8 @@ Requires:       python3-gobject
 Requires:       python3-setproctitle
 Requires:       python3-xapp
 Requires:       xapp-symbolic-icons
+
+%{?python_disable_dependency_generator}
 
 %description
 Xepub is a secure and comfortable EPUB reader for Linux desktops.
