@@ -29,7 +29,8 @@ Requires:       xapps
 Launch websites as if they were apps.
 
 %prep
-{{{ git_dir_setup_macro }}}
+%autosetup -n webapp-manager-%{version}
+
 sed -i 's,/usr/lib/,${libdir}/,' usr/bin/%{name}
 sed -i 's,__DEB_VERSION__,%{version},' usr/lib/%{name}/%{name}.py
 
